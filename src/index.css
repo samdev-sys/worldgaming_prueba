@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS para paletas de colores dinámicas */
+:root {
+  --color-primary: #0A1128;
+  --color-secondary: #001F54;
+  --color-tertiary: #034078;
+  --color-accent: #1282A2;
+  --color-light: #FEFCFB;
+  
+  /* Variables actualizadas para coincidir con HomePage */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --background-primary: #0F172A;
+  --background-secondary: #1E293B;
+  --background-card: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --accent-orange: #F97316;
+  --accent-red: #EF4444;
+}
+
+/* Estilos base mejorados para mejor visibilidad */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--background-primary) 0%, var(--background-secondary) 100%);
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Mejoras en contraste para texto */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Mejoras en fondos de tarjetas - estilo HomePage */
+.bg-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px);
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.bg-card-dark {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px);
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Mejoras en botones - estilo HomePage */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+/* Mejoras en inputs - estilo HomePage */
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-orange) !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Mejoras en labels */
+label {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Estilos personalizados para el slider de video */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-webkit-slider-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  height: 8px;
+}
+
+.slider::-moz-range-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  height: 8px;
+}
+
+/* Tipografía Gaming */
+.font-gaming {
+  font-family: 'Montserrat', monospace;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.font-gaming-secondary {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-gaming-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* Efectos de texto gaming */
+.text-gaming-glow {
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.text-gaming-accent {
+  text-shadow: 
+    0 0 10px rgba(255, 69, 0, 0.8),
+    0 0 20px rgba(255, 69, 0, 0.4),
+    0 0 30px rgba(255, 69, 0, 0.2);
+}
+
+/* Animaciones para las secciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animaciones para secciones de video */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleInVideo {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Clases de animación */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.video-section-enter {
+  animation: slideInFromBottom 1s ease-out forwards;
+}
+
+.video-player-enter {
+  animation: scaleInVideo 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Efectos de scroll reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efectos de hover mejorados */
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Gradientes animados */
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Mejoras específicas para componentes - estilo HomePage */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mejoras para tabs - estilo HomePage */
+.tab-active {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+}
+
+.tab-inactive {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-inactive:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* Mejoras para listas - estilo HomePage */
+.list-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mejoras para iconos */
+.icon-primary {
+  color: var(--accent-orange);
+}
+
+.icon-secondary {
+  color: var(--text-secondary);
+}
+
+/* Mejoras para estados de carga */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Mejoras para notificaciones - estilo HomePage */
+.notification {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--accent-orange);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para select options */
+select option {
+  background: #1F2937;
+  color: var(--text-primary);
+}
+
+@layer base {
+  
+  /* Estilos base para tipografía gaming */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', monospace;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+  
+  .font-friendly {
+    font-family: 'Montserrat', 'Inter', 'Poppins', Arial, sans-serif;
+  }
+  
+  .text-pastel-pink {
+    color: #ffffff;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  /* Mejoras en scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-orange);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-red);
+  }
+}
+
+/* Utilidades para line-clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Gaming DatePicker Styles */
+.gaming-datepicker-popper {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+.react-datepicker-popper {
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+.gaming-calendar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  font-family: inherit !important;
+  z-index: 999999 !important;
+  position: relative !important;
+}
+
+.react-datepicker {
+  z-index: 999999 !important;
+  position: relative !important;
+}
+
+/* Forzar que el calendario aparezca por encima de todo */
+.react-datepicker-popper[data-placement^="bottom"] {
+  z-index: 999999 !important;
+}
+
+.react-datepicker-popper[data-placement^="top"] {
+  z-index: 999999 !important;
+}
+
+/* Asegurar que el contenedor del calendario tenga el z-index más alto */
+div[data-placement^="bottom"] {
+  z-index: 999999 !important;
+}
+
+div[data-placement^="top"] {
+  z-index: 999999 !important;
+}
+
+/* Estilos específicos para el portal del datepicker */
+#datepicker-portal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+}
+
+#datepicker-portal .react-datepicker-popper {
+  pointer-events: auto !important;
+  z-index: 999999 !important;
+  position: absolute !important;
+}
+
+/* Forzar que cualquier elemento dentro del portal tenga z-index alto */
+#datepicker-portal * {
+  z-index: 999999 !important;
+}
+
+.react-datepicker__header {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1)) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 16px !important;
+}
+
+.react-datepicker__current-month {
+  color: white !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 8px !important;
+}
+
+.react-datepicker__day-name {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  margin: 4px !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+}
+
+.react-datepicker__day {
+  color: white !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  margin: 2px !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.react-datepicker__day:hover {
+  background: rgba(59, 130, 246, 0.3) !important;
+  color: white !important;
+  transform: scale(1.05) !important;
+}
+
+.react-datepicker__day--selected {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: white !important;
+}
+
+.react-datepicker__day--disabled {
+  color: rgba(255, 255, 255, 0.3) !important;
+  background: transparent !important;
+}
+
+.react-datepicker__day--disabled:hover {
+  background: transparent !important;
+  transform: none !important;
+}
+
+.gaming-today {
+  background: rgba(34, 197, 94, 0.3) !important;
+  color: #22c55e !important;
+  font-weight: 600 !important;
+  border: 2px solid #22c55e !important;
+}
+
+.react-datepicker__navigation {
+  top: 16px !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  border-width: 2px 2px 0 0 !important;
+}
+
+.react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: white !important;
+}
+
+.react-datepicker__month-container {
+  background: transparent !important;
+}
+
+.react-datepicker__month {
+  margin: 0 !important;
+  padding: 8px !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.react-datepicker__close-icon {
+  background: transparent !important;
+}
+
+.react-datepicker__close-icon::after {
+  background: rgba(255, 255, 255, 0.7) !important;
+  font-size: 16px !important;
+  padding: 4px !important;
+  border-radius: 50% !important;
+}
+
+.react-datepicker__close-icon:hover::after {
+  background: white !important;
+}
+
+.react-datepicker__input-container input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  outline: none !important;
+  color: white !important;
+  font-size: 0.875rem !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #F97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.react-datepicker__input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Estilos para el wrapper del input */
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
